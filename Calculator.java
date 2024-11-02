@@ -30,16 +30,17 @@ public class Main {
 
                 if (choice==10){
                     System.out.println("All results: "+results);
-                    break;
+                    continue;
                 }
                 if (choice==9){
                     System.out.println("Last result: " + lastResult);
-                    break;
+                    continue;
                 }
 
+                if (choice >= 1 && choice <= 8) {
                 System.out.println("Enter first number : ");
                 number1=input.nextDouble();
-                System.out.println("Enter second number ");
+                System.out.println("Enter second number: ");
                 number2=input.nextDouble();
 
 
@@ -69,13 +70,25 @@ public class Main {
                     case 8:
                         lastResult = average(number1, number2);
                         break;
+                    default:
+                        System.out.println("Invalid option.");
                 }
 
                 results.add(lastResult);
                 System.out.println("Result: " + lastResult);
+                } else if (choice == 9) {
+                    System.out.println("Last Result: " + lastResult);
 
+                } else if (choice == 10) {
+                    System.out.println("All Results:");
+                    for (double r : results) {
+                        System.out.println(r);
+                    }
+                }
             } while (choice != 0);
-            System.out.println("Program terminated.");
+
+            System.out.println("Calculator exited.");
+
         }
 
 
